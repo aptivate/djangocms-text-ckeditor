@@ -43,22 +43,6 @@ jQuery(document).ready(function ($) {
 
 			// render cckeditor
 			CKEDITOR.replace(container, this.options);
-
-			// add additional styling
-			CKEDITOR.on('instanceReady', $.proxy(CMS.CKEditor, 'setup'));
-		},
-
-		// setup is called after ckeditor has been initialized
-		setup: function () {
-			// add css tweks to the editor
-			this.styles();
-		},
-
-		styles: function () {
-			// add styling to source and fullscreen view
-			$('.cke_button__maximize, .cke_button__source').parent()
-				.css('margin-right', 0).parent()
-				.css('float', 'right');
 		}
 
 	};
