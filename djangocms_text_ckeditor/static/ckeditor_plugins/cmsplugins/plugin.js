@@ -130,7 +130,12 @@ jQuery(document).ready(function ($) {
 			this.editor.removeMenuItem('image');
 
 			this.editor.contextMenu.addListener(function(element) {
-				if($(element.$).attr('id').split('_')[0] === 'plugin') {
+				var id = "";
+				if($(element.$).attr('id') != undefined)
+				{
+					id = $(element.$).attr('id');
+				}
+				if(id.split('_')[0] === 'plugin') {
 					return { cmspluginsItem: CKEDITOR.TRISTATE_OFF };
 				}
 			});
